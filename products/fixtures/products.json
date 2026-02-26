@@ -1,0 +1,167 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "name": "Бело-бирюзовая футболка OVERSIZE",
+        "price": "60.00",
+        "description": "",
+        "image": "products_images/white_blue_tsirt.png",
+        "category": 4
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "name": "Чёрно-бирюзовая футболка OVERSIZE",
+        "price": "60.00",
+        "description": "",
+        "image": "products_images/Черно-бирюзовая_футболка_OVERSIZE_.jpg",
+        "category": 4
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "name": "Бело-оранжевый лонгслив",
+        "price": "70.00",
+        "description": "",
+        "image": "products_images/Бело-оранжевыи_лонгслив_.png",
+        "category": 2
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "name": "Чёрно-розовый лонгслив",
+        "price": "70.00",
+        "description": "",
+        "image": "products_images/Черно-розовыи_лонгслив_.jpg",
+        "category": 2
+    }
+},
+{
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+        "name": "Бело-оранжевое зип-худи",
+        "price": "130.00",
+        "description": "",
+        "image": "products_images/Бело-оранжевое_зип-худи_.png",
+        "category": 3
+    }
+},
+{
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+        "name": "Чёрно-оранжевое зип-худи",
+        "price": "130.00",
+        "description": "",
+        "image": "products_images/Черно-оранжевое_зип-худи_.jpg",
+        "category": 3
+    }
+},
+{
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+        "name": "Бело-оранжевое худи",
+        "price": "130.00",
+        "description": "",
+        "image": "products_images/Бело-оранжевое_худи_.png",
+        "category": 1
+    }
+},
+{
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+        "name": "Чёрно-розовое худи",
+        "price": "130.00",
+        "description": "",
+        "image": "products_images/Черно-розовое_худи_.jpg",
+        "category": 1
+    }
+},
+{
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+        "name": "Бело/чёрно-оранжевый шоппер",
+        "price": "20.00",
+        "description": "",
+        "image": "products_images/Белочерно-оранжевыи_шоппер_.jpg",
+        "category": 5
+    }
+},
+{
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+        "name": "Белый/чёрный блокнот А5",
+        "price": "6.00",
+        "description": "",
+        "image": "products_images/Белыичерныи_блокнот_А5_.jpg",
+        "category": 6
+    }
+},
+{
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+        "name": "Кружка",
+        "price": "11.00",
+        "description": "",
+        "image": "products_images/Кружка.jpg",
+        "category": 6
+    }
+},
+{
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+        "name": "Значок",
+        "price": "3.00",
+        "description": "",
+        "image": "products_images/Значок.jpg",
+        "category": 5
+    }
+},
+{
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+        "name": "Ремувка",
+        "price": "5.00",
+        "description": "",
+        "image": "products_images/Ремувка.jpg",
+        "category": 5
+    }
+},
+{
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+        "name": "Открывашка",
+        "price": "8.00",
+        "description": "",
+        "image": "products_images/Открывашка.jpg",
+        "category": 6
+    }
+},
+{
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+        "name": "Ручка",
+        "price": "3.00",
+        "description": "",
+        "image": "products_images/Ручка.jpg",
+        "category": 6
+    }
+}
+]

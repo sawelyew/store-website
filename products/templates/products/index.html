@@ -1,0 +1,28 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'vendor/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 fade-in">
+                <h1 class="hero-title text-uppercase">
+                    Style <br> <span class="text-primary">Without</span> Limits
+                </h1>
+                <p class="hero-subtitle">
+                    Новые образы и лучшие бренды на Store. Бесплатная доставка по всему миру и скидка 20% новым покупателям.
+                </p>
+                <button id="start-purchase-btn" type="button">
+                    <a id="start-purchase-link" href="{% url 'products:index' %}">
+                        Начать покупки <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

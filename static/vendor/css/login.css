@@ -1,0 +1,126 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-card {
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+            background: #fff;
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+        }
+
+        .auth-logo {
+            font-weight: 800;
+            font-size: 2rem;
+            letter-spacing: -1px;
+            color: #000;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-logo span { color: #007bff; }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border-radius: 12px;
+            padding: 14px 20px;
+            border: 1px solid #eee;
+            background-color: #fdfdfd;
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: #fff;
+            border-color: #000;
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+        }
+
+        .btn-login {
+            background: #000;
+            color: #fff;
+            border-radius: 14px;
+            padding: 14px;
+            font-weight: 700;
+            width: 100%;
+            border: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #222;
+            transform: translateY(-2px);
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: #f8f9fa;
+            border-color: #ccc;
+            transform: translateY(-3px);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #ccc;
+            font-size: 0.8rem;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+
+        .divider:not(:empty)::before { margin-right: .5em; }
+        .divider:not(:empty)::after { margin-left: .5em; }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .auth-footer a {
+            color: #000;
+            font-weight: 700;
+            text-decoration: none;
+        }

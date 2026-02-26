@@ -1,0 +1,65 @@
+body { background-color: #f8f9fa; }
+
+    .category-title { font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-size: 1.2rem; margin-bottom: 25px; }
+    .list-group-item { border: none; padding: 12px 20px; margin-bottom: 5px; border-radius: 10px !important; transition: 0.3s; font-weight: 500; color: #555; }
+    .list-group-item:hover, .list-group-item.active { background-color: #000 !important; color: #fff !important; transform: translateX(5px); }
+    .pagination .page-link { border: none; margin: 0 5px; border-radius: 10px !important; color: #000; font-weight: 600; }
+    .pagination .page-item.active .page-link { background-color: #000; color: #fff; }
+
+    .product-card { border: none; border-radius: 20px; transition: all 0.4s ease; background: #fff; }
+    .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .product-img-container { border-radius: 20px 20px 0 0; overflow: hidden; background-color: #f1f1f1; height: 250px; display: flex; align-items: center; justify-content: center; }
+    .product-card img { max-height: 200px; object-fit: contain; transition: 0.5s; }
+    .product-card:hover img { transform: scale(1.1); }
+    .card-title a { color: #000; font-weight: 700; text-decoration: none; font-size: 1.1rem; }
+    .product-price { font-weight: 800; color: #000; font-size: 1.2rem; }
+
+    .size-option input[type="radio"] {
+        position: absolute !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .size-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+        margin: 15px 0 !important;
+    }
+
+    .size-btn-nike {
+        display: block !important;
+        padding: 12px 0 !important;
+        text-align: center !important;
+        border: 1px solid #e5e5e5 !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        font-weight: 500 !important;
+        background-color: #fff !important;
+        color: #111 !important;
+        transition: 0.1s;
+    }
+
+    .size-btn-nike:hover { border-color: #111 !important; }
+
+    .size-option input[type="radio"]:checked + .size-btn-nike {
+        background-color: #111 !important;
+        color: #fff !important;
+        border-color: #111 !important;
+    }
+
+    .btn-nike-black {
+        background-color: #111 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 30px !important;
+        padding: 15px !important;
+        font-weight: 600 !important;
+        width: 100% !important;
+        transition: 0.2s;
+    }
+
+    .btn-nike-black:hover { opacity: 0.8 !important; color: #fff !important; }
+
+    .modal-content-nike { border-radius: 12px !important; border: none !important; }

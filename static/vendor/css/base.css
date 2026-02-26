@@ -1,0 +1,86 @@
+    .navbar-nav .nav-link {
+        color: rgba(255,255,255,0.8) !important;
+    }
+    .navbar-nav .nav-link:hover {
+        color: #fff !important;
+        transform: translateY(-1px);
+    }
+    .dropdown-item:active {
+        background-color: #007bff;
+    }
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #000;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    .message-container {
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        z-index: 9999;
+        width: 320px;
+    }
+
+    .toast-message {
+        background: #fff;
+        color: #333;
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        border-left: 5px solid transparent;
+        animation: slideIn 0.5s ease forwards;
+        position: relative;
+    }
+
+    .alert-success { border-left-color: #28a745; }
+    .alert-danger { border-left-color: #dc3545; }
+    .alert-info { border-left-color: #17a2b8; }
+    .alert-warning { border-left-color: #ffc107; }
+
+    .toast-icon {
+        margin-right: 15px;
+        font-size: 1.2rem;
+    }
+
+    .alert-success .toast-icon { color: #28a745; }
+    .alert-danger .toast-icon { color: #dc3545; }
+
+    .toast-content {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-right: 20px;
+    }
+
+    .close-toast {
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        color: #ccc;
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        transition: 0.3s;
+    }
+
+    .close-toast:hover { color: #333; }
+
+    @keyframes slideIn {
+        from { opacity: 0; transform: translateX(100%); }
+        to { opacity: 1; transform: translateX(0); }
+    }

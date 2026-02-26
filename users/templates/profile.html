@@ -1,0 +1,144 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'vendor/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 100px;">
+    <div class="row">
+        <div class="col-lg-5 mb-4">
+            <div class="profile-card">
+    <div class="profile-header">
+        <div class="avatar-wrapper position-relative d-inline-block">
+            <div class="avatar-circle overflow-hidden m-0">
+                {% if user.image %}
+                    <img src="{{ user.image.url }}" id="avatar-preview" alt="{{ user.username }}">
+                {% else %}
+                    <span class="text-dark" id="avatar-letter">{{ user.username|slice:":1"|upper }}</span>
+                {% endif %}
+            </div>
+
+            <label for="{{ form.image.id_for_label }}" class="avatar-overlay">
+                <div class="overlay-content">
+                    <i class="fas fa-camera mb-1"></i>
+                    <span>Изменить</span>
+                </div>
+            </label>
+        </div>
+
+        <h4 class="mt-3 mb-0 font-weight-bold">{{ user.username }}</h4>
+        <p class="small opacity-75 mb-0">{{ user.email }}</p>
+
+
+    </div>
+
+    <div class="p-4">
+        <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="display:none">{{ form.image }}</div>
+
+            <div class="form-row">
+                <div class="col-lg-6 form-group">
+                    <label class="small font-weight-bold">Имя</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="col-lg-6 form-group">
+                    <label class="small font-weight-bold">Фамилия</label>
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="small font-weight-bold">Email</label>
+                {{ form.email }}
+            </div>
+            <button type="submit" class="btn btn-save mt-3">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+        </div>
+
+        <div class="col-lg-7">
+            <h3 class="font-weight-bold mb-4">Ваша корзина</h3>
+
+            {% if baskets %}
+                {% for basket in baskets %}
+                <div class="card basket-item shadow-sm">
+                    <div class="card-body p-3">
+                        <div class="row align-items-center">
+                            <div class="col-auto">
+                                <img src="{{ basket.product.image.url }}" alt="" class="basket-img">
+                            </div>
+                            <div class="col">
+                                <h6 class="font-weight-bold mb-0">{{ basket.product.name }}</h6>
+                                {% if basket.size %}
+                                    <span class="badge badge-dark mt-1" style="border-radius: 6px; font-size: 0.7rem;">
+                                        Размер: {{ basket.size }}
+                                    </span>
+                                {% endif %}
+                                <br>
+                                <span class="text-muted small">Цена: {{ basket.product.price }} руб.</span>
+                            </div>
+                            <div class="col-auto">
+                                <form action="{% url 'users:basket_edit' basket.product.id %}{% if basket.product.category.size_type == 'clothing' %}?size={{ basket.size }}{% endif %}"
+                                      method="post" class="d-flex align-items-center">
+                                    {% csrf_token %}
+                                    <input name="quantity" type="number" class="form-control form-control-sm quantity-input mr-2"
+                                           value="{{ basket.quantity }}" min="1">
+                                    <button type="submit" class="btn btn-outline-dark btn-sm border-0">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-auto text-right" style="min-width: 100px;">
+                                <span class="font-weight-bold">{{ basket.sum }} руб.</span>
+                            </div>
+                            <div class="col-auto">
+                                <a href="{% url 'users:basket_remove' basket.product.id %}?size={{ basket.size|default:'' }}"
+                                   class="text-danger ml-2">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="card profile-card mt-4 bg-dark text-white">
+                    <div class="card-body d-flex justify-content-between align-items-center p-4">
+                        <div>
+                            <h5 class="mb-0">Итого:</h5>
+                            <span class="small opacity-75">Включая все налоги</span>
+                        </div>
+                        <h3 class="mb-0 font-weight-bold">{{ baskets.total_price }} руб.</h3>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'users:order_view' %}" class="btn btn-primary btn-lg btn-block shadow" style="border-radius: 50px; font-weight: 700;">
+                        Оформить заказ
+                    </a>
+                </div>
+            {% else %}
+                <div class="text-center py-5 profile-card">
+                    <i class="fas fa-shopping-basket fa-3x mb-3 text-muted"></i>
+                    <p class="text-muted">Ваша корзина пока пуста</p>
+                    <a href="{% url 'products:index' %}" class="btn btn-outline-dark rounded-pill">Перейти к покупкам</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('input[type="file"]').addEventListener('change', function(e) {
+        if (this.files && this.files[0]) {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                const circle = document.querySelector('.avatar-circle');
+                circle.innerHTML = `<img src="${e.target.result}" id="avatar-preview">`;
+            }
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+</script>
+{% endblock %}

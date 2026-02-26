@@ -1,0 +1,62 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'vendor/css/product_detail.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-lg overflow-hidden">
+        <div class="row no-gutters">
+            <div class="col-md-6 bg-light d-flex align-items-center justify-content-center p-4">
+                <img src="{{ product.image.url }}" class="img-fluid rounded" alt="{{ product.name }}" style="max-height: 500px; object-fit: contain;">
+            </div>
+
+            <div class="col-md-6 p-5">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb bg-transparent p-0 mb-4">
+                        <li class="breadcrumb-item"><a href="{% url 'products:index' %}" class="text-muted">Главная</a></li>
+                        <li class="breadcrumb-item active text-dark" aria-current="page">{{ product.category.name }}</li>
+                    </ol>
+                </nav>
+
+                <h1 class="display-5 font-weight-bold mb-3">{{ product.name }}</h1>
+                <h3 class="text-success mb-4">{{ product.price }} руб.</h3>
+                
+                <hr>
+
+                <p class="text-muted mb-5" style="line-height: 1.8;">
+                    {{ product.description }}
+                </p>
+
+                <div class="form-group mb-4">
+                    <form action="{% url 'users:basket_add' product.id %}" method="get">
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger py-2 small rounded-3">
+                                {{ form.non_field_errors }}
+                            </div>
+                        {% endif %}
+                        <div class="form-group mb-4">
+                            {% if product.category.size_type == 'clothing' %}
+                                <label class="small font-weight-bold text-muted text-uppercase mb-2 d-block">Выберите размер:</label>
+
+                                <div class="d-flex flex-wrap size-selector" style="gap: 10px;">
+                                    {% for s in sizes %}
+                                        <label class="size-option">
+                                            <input type="radio" name="size" value="{{ s }}" required>
+                                            <span class="size-btn">{{ s }}</span>
+                                        </label>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <button type="submit" class="btn btn-dark btn-lg w-100 py-3 mt-4 shadow-sm" style="border-radius: 15px;">
+                                <i class="fas fa-shopping-basket mr-2"></i> Добавить в корзину
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
